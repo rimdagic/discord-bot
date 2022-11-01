@@ -14,12 +14,12 @@ client.on('ready', () => {
 
 client.on('messageCreate', message => {
     if (message.content === '!ping') {
-        message.reply('pong')
+        message.reply('pong');
     }
     if (message.content === '!roll') {
-        let dice = Math.floor(Math.random()*6)+1
+        let dice = Math.floor(Math.random()*6)+1;
         dice = dice.toString();
-        message.reply(dice)
+        message.reply(dice);
     }
 })
 
