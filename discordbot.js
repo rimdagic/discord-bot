@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 const { Client, GatewayIntentBits } = require('discord.js');
-const welcome = require('./welcome.js')
 
 const client = new Client({ intents: [
     GatewayIntentBits.Guilds, 
@@ -11,10 +10,7 @@ const client = new Client({ intents: [
 });
 
 client.on('ready', () => {
- console.log(`Logged in as ${client.user.tag}!`);
-
- welcome(client);
- 
+    console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('messageCreate', message => {
@@ -26,6 +22,6 @@ client.on('messageCreate', message => {
         dice = dice.toString();
         message.reply(dice);
     }
-})
+});
 
 client.login(process.env.TOKEN);
