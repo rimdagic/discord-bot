@@ -1,6 +1,8 @@
 require('dotenv').config();
 
 const { Client, GatewayIntentBits } = require('discord.js');
+const welcome = require('./welcome.js')
+
 const client = new Client({ intents: [
     GatewayIntentBits.Guilds, 
     GatewayIntentBits.GuildMessages, 
@@ -10,6 +12,9 @@ const client = new Client({ intents: [
 
 client.on('ready', () => {
  console.log(`Logged in as ${client.user.tag}!`);
+
+ welcome(client);
+ 
 });
 
 client.on('messageCreate', message => {
