@@ -25,3 +25,6 @@ client.on('messageCreate', message => {
 });
 
 client.login(process.env.TOKEN);
+
+
+//"node discordbot"
